@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Proj-E</title>
+<script type="text/javascript" src="res/e.js"></script>
+</head>
+<body onload="init();">
+		<div id="dashDiv" class="view">
+			<h1> Dashboard </h1>
+			<ul>
+			<li><a href='javascript:showPrime();'> Prime </a></li>
+			<li><a href='javascript:showSis();'> Sis Report </a></li>
+			</ul>
+		</div>
+		<div id="primeDiv" class="view">
+			<h1> Prime </h1>
+			<a href='Dash.do'> Dashboard </a>
+			<form id="primeForm" onsubmit="prime(this); return false;">
+				<input type="text" name="min" id="minValue"> <br> 
+				<input type="text" name="max" id="maxValue"> <br> 
+				<input type="submit" value="Find Prime"> <br>
+			</form>
+			<div id="primeResult">
+			</div>
+		</div>
+		<div id="sisDiv" class="view">
+			<h1> Sis </h1>
+			<a href='Dash.do'> Dashboard </a>
+			<form id="sisForm" onsubmit="sis(this); return false;">
+				<input type="text" name="name" placeholder="Name prefix...">
+				<br> <input type="text" name="minGpa"
+					placeholder="Minimum GPA"> <br> <select id="sortBy"
+					name="sortBy">
+					<option selected="any" value="NONE">Select One:</option>
+					<option value="SURNAME">Last Name</option>
+					<option value="MAJOR">Major</option>
+					<option value="COURSES">Number of Courses</option>
+					<option value="GPA">GPA</option>
+				</select> <br> <input type="submit" onclick="doPrime()"
+					value="Generate Report"> <br>
+				<div id="sisResult"></div>
+			</form>
+		</div>
+</body>
+</html>
